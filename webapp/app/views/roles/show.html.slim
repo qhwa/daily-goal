@@ -1,0 +1,18 @@
+p#notice= notice
+
+h1= @role.name
+
+- if @role.relative_to.present?
+  p
+    strong Relative to:
+    = @role.relative_to
+
+h2 定期任务
+
+ul.tasks
+  - @role.tasks.each do |task|
+    = link_to task.name, task
+
+= link_to 'Edit', edit_role_path(@role)
+|  | 
+= link_to 'Back', roles_path

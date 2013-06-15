@@ -1,3 +1,6 @@
 [submodule "webapp/vendor/todc-bootstrap"]
 	path = webapp/vendor/todc-bootstrap
 	url = git://github.com/todc/todc-bootstrap.git
+[submodule "webapp/vendor/bootstrap"]
+	path = webapp/vendor/bootstrap
+	url = git://github.com/twitter/bootstrap.git
