@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130615064025) do
+ActiveRecord::Schema.define(version: 20130616141326) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20130615064025) do
     t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "paused",     default: false
   end
 
   add_index "tasks", ["role_id"], name: "index_tasks_on_role_id"

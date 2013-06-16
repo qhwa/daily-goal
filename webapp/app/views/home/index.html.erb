@@ -1,0 +1,18 @@
+<%= javascript_include_tag 'tasks' %>
+
+<h2>Tasks</h2>
+<div ng-controller="TaskCtrl">
+  <span>{{remaining()}} of {{todos.length}} remaining</span>
+  [ <a href="" ng-click="archive()">archive</a> ]
+  <ul class="unstyled">
+    <li ng-repeat="task in tasks">
+      <input type="checkbox" ng-model="task.paused">
+      <span class="done-{{todo.paused}}">{{task.name}}</span>
+    </li>
+  </ul>
+  <form ng-submit="addTask()">
+    <input type="text" ng-model="taskName"  size="30"
+           placeholder="add new task here">
+    <input class="btn-primary" type="submit" value="add">
+  </form>
+</div>
