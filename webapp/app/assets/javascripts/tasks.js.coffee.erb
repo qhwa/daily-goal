@@ -1,0 +1,17 @@
+angular.module( 'task', ['ngResource', 'tasksServices', 'ui'] )
+  .config ($routeProvider) ->
+    $routeProvider
+      .when( '/', {
+        controller: TaskListController,
+        templateUrl: '<%= asset_path "task-list.html" %>'
+      })
+      .when( '/task/:taskId', {
+        controller: TaskDetailController,
+        templateUrl: '<%= asset_path 'task-detail.html' %>'
+      })
+
+  .config(['$httpProvider', ($httpProvider) ->
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+      $('meta[name=csrf-token]').attr('content')
+  ])
+
