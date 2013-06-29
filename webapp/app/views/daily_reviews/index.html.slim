@@ -1,0 +1,4 @@
+ul
+  - @reviews.each do |review|
+    = content_tag_for :li, review do
+      = render :partial => 'daily_reviews/daily_review', :object => review

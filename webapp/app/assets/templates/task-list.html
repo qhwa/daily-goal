@@ -1,10 +1,10 @@
 <div ng-controller="TaskListController">
+    <div ui-calendar></div>
     <span>you have {{tasks.length}} tasks</span>
 
-    <ul class="tasks unstyled" ui-sortable="sortableOptions">
+    <ul class="tasks" ui-sortable="sortableOptions">
       <li class="task" id="task_{{task.id}}" ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.paused">
-        <span class="done-{{todo.paused}}">{{task.name}}</span>
+          <a href="#task/{{task.id}}">{{task.name}}</span>
       </li>
     </ul>
 

@@ -1,5 +1,12 @@
 DailyGoal::Application.routes.draw do
-  resources :tasks
+
+  resources :tasks do
+    resources :daily_reviews, :path => 'reviews' do
+      member do
+        put 'get_done'
+      end
+    end
+  end
 
   resources :roles
   root 'home#index'
