@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130616141326) do
+ActiveRecord::Schema.define(version: 20130629054553) do
+
+  create_table "daily_reviews", force: true do |t|
+    t.integer  "task_id",                    null: false
+    t.date     "date",                       null: false
+    t.boolean  "done",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "daily_reviews", ["done"], name: "index_daily_reviews_on_done"
+  add_index "daily_reviews", ["task_id", "date"], name: "index_daily_reviews_on_task_id_and_date"
+  add_index "daily_reviews", ["task_id", "done"], name: "index_daily_reviews_on_task_id_and_done"
+  add_index "daily_reviews", ["task_id"], name: "index_daily_reviews_on_task_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"

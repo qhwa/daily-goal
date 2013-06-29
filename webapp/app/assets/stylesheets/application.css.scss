@@ -13,3 +13,12 @@
  */
 @import 'bootstrap';
 @import 'bootstrap-google';
+
+table.calendar {
+  td {
+    font-size: 16pt;
+    padding: .5em;
+    vertical-align: middle;
+    text-align: center;
+  }
+}

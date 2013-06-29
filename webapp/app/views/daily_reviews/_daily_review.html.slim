@@ -1,0 +1,10 @@
+- review = daily_review
+
+= review.date
+- if review.done?
+  | [done]
+- else
+  = link_to 'get done', 
+    get_done_task_daily_review_path(review.task, review), 
+    remote: true, 
+    method: 'PUT'
