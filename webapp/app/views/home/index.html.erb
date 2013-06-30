@@ -1,9 +1,10 @@
 <%= javascript_include_tag 'angular/services/tasks' %>
 <%= javascript_include_tag 'angular/controllers/task-list' %>
 <%= javascript_include_tag 'angular/controllers/task-detail' %>
+<%= javascript_include_tag "fullcalendar" %>
+
 <%= javascript_include_tag 'tasks' %>
 
 <div data-ng-app="task" data-ng-csp="">
-  <h2>Tasks</h2>
   <div ng-view></div>
 </div>
