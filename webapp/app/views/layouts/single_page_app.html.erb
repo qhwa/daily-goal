@@ -10,11 +10,14 @@
   <%= javascript_include_tag "angular" %>
   <%= javascript_include_tag "angular-ui" %>
   <%= javascript_include_tag "angular-resource" %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
