@@ -24,5 +24,28 @@ table.calendar {
 }
 
 .ui-calendar {
-  width: 300px;
+
+  td {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #fff;
+    background-color: #eee;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ccc;
+    }
+
+    &.done {
+      background-color: #ff7300;
+      &:hover {
+        background-color: #FF9742;
+      }
+    }
+
+    &.undone {
+      background-color: #ccc;
+    }
+  }
+
 }

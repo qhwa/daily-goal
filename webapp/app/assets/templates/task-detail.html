@@ -1,7 +1,13 @@
 <h1>{{task.name}}</h1>
 
-<div class="ui-calendar" data-task-id="{{task.id}}" data-reviews-uri="{{task.reviewsUri}}"></div>
-<script>
-</script>
+<div class="ui-calendar" data-task-id="{{task.id}}" data-reviews-uri="{{task.reviewsUri}}">
+    <table>
+        <tr ng-repeat="i in weekDays">
+            <td id="cell_{{j}}_{{i}}" ng-repeat="j in weeks"> </td>
+        </tr>
+    </table>
+</div>
 
-<a href="#/" class="btn">back</a>
+<div class="form-actions">
+    <a href="#/" class="btn">back</a>
+</div>
