@@ -7,7 +7,7 @@ class Task < ActiveRecord::Base
   validates_associated :role
 
   def need_to_be_done_on?( date )
-    date >= created_at.to_date
+    (date.past? || date.today?) && date >= created_at.to_date
   end
 
   def daily_review_on( date )
