@@ -1,7 +1,9 @@
 class DailyReviewsController < ApplicationController
 
+  respond_to :json
+
   before_filter :find_task
-  before_filter :find_review, only: [:get_done]
+  before_filter :find_review, only: [:get_done, :show, :update]
 
   def index
     @reviews = @task.daily_reviews
@@ -19,6 +21,14 @@ class DailyReviewsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def update
+    @review.update app_params
+    respond_with @review
+  end
+
   protected
 
     def find_task
@@ -26,6 +36,12 @@ class DailyReviewsController < ApplicationController
     end
 
     def find_review
-      @review = DailyReview.find( params[:id] )
+      @review = DailyReview.find_by( date: params[:id] )
+    end
+
+  private
+
+    def app_params
+      params.require(:daily_review).permit(:done, :msg)
     end
 end

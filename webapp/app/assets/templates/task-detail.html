@@ -16,18 +16,18 @@
 <div id="edit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">{{review.date}}</h3>
+    <h3 id="myModalLabel">{{task.name}} on {{review.date}}</h3>
   </div>
   <div class="modal-body">
     <form>
-      <label>
-        <input type="checkbox" ng-model="review.done"/>
-        已完成
-      </label>
+      <fieldset>
+          <label class="checkbox"> <input type="checkbox" ng-model="review.done"/> done </label>
+          <input type="text" ng-model="review.msg" placeholder="say something~" />
+      </fieldset>
     </form>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
+    <button class="btn btn-primary btn-save">Save</button>
   </div>
 </div>
