@@ -1,7 +1,7 @@
 DailyGoal::Application.routes.draw do
 
   resources :tasks do
-    resources :daily_reviews, :path => 'reviews' do
+    resources :daily_reviews, :path => 'reviews', :id => /[-\d]+/ do
       member do
         put 'get_done'
       end
