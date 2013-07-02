@@ -1,6 +1,6 @@
 class @TaskDetailController
 
-  constructor: ($scope, $routeParams, Task, Tasks, Reviews) ->
+  constructor: ($scope, $routeParams, Task, Tasks) ->
 
     @id = $routeParams.taskId
     $scope.weeks = _.range(53)
