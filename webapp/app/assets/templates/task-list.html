@@ -1,16 +1,22 @@
 <div ng-controller="TaskListController">
-    <span>you have {{tasks.length}} tasks</span>
+    <div class="row">
+        <h3>You have {{tasks.length}} tasks</h3>
+    </div>
 
-    <ul class="tasks" ui-sortable="sortableOptions">
-      <li class="task" id="task_{{task.id}}" ng-repeat="task in tasks">
-          <a href="#task/{{task.id}}">{{task.name}}</a>
-      </li>
-    </ul>
+    <div class="row">
+        <ul class="tasks nav nav-tabs nav-stacked span6" ui-sortable="sortableOptions">
+          <li class="task" id="task_{{task.id}}" ng-repeat="task in tasks">
+              <a href="#task/{{task.id}}">{{task.name}}</a>
+          </li>
+        </ul>
+    </div>
 
-    <form ng-submit="addTask()">
-      <input type="text" ng-model="taskName"  size="30"
-             placeholder="add new task here" />
-      <input class="btn-primary" type="submit" value="add" />
-    </form>
+    <div class="row">
+        <form ng-submit="addTask()" class="form-search">
+          <input class="span6" type="text" ng-model="taskName"  size="30"
+                 placeholder="add new task here" />
+          <input class="btn btn-primary" type="submit" value="add" />
+        </form>
+    </div>
 
 </div>

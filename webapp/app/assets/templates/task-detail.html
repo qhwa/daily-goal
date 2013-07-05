@@ -1,4 +1,9 @@
-<h1>{{task.name}}</h1>
+<div class="page-header">
+    <h1>
+        {{task.name}}
+        <small>as {{task.role.name}} of {{task.role.relative_to}}</small>
+    </h1>
+</div>
 
 <div class="ui-calendar" data-task-id="{{task.id}}" data-reviews-uri="{{task.reviewsUri}}">
     <table>
@@ -16,13 +21,13 @@
 <div id="edit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">{{task.name}} on {{review.date}}</h3>
+    <h3 id="myModalLabel">"{{task.name}}" on {{review.date}}</h3>
   </div>
   <div class="modal-body">
     <form>
       <fieldset>
           <label class="checkbox"> <input type="checkbox" ng-model="review.done"/> done </label>
-          <input type="text" ng-model="review.msg" placeholder="say something~" />
+          <input type="text" ng-model="review.msg" placeholder="say something~" class="input-block-level" />
       </fieldset>
     </form>
   </div>
