@@ -1,4 +1,10 @@
-angular.module( 'task', ['ngResource', 'tasksServices', 'dailyReviewsServices', 'ui'] )
+angular.module( 'task', [
+  'ngResource',
+  'tasksServices',
+  'dailyReviewsServices',
+  'rolesServices',
+  'ui'
+  ])
   .config ($routeProvider) ->
     $routeProvider
       .when( '/', {
@@ -8,6 +14,10 @@ angular.module( 'task', ['ngResource', 'tasksServices', 'dailyReviewsServices', 
       .when( '/task/:taskId', {
         controller: TaskDetailController,
         templateUrl: '<%= asset_path 'task-detail.html' %>'
+      })
+      .when( '/tasks/new', {
+        controller: CreateTaskController,
+        templateUrl: '<%= asset_path 'new-task.html' %>'
       })
 
   .config(['$httpProvider', ($httpProvider) ->

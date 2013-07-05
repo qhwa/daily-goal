@@ -8,9 +8,19 @@ class @TaskDetailController
     $scope.weeks = _.range(53)
     $scope.weekDays = _.range(7)
 
-    $scope.task = Task.get {taskId: @id}, (data) =>
+    $scope.task = Task.get {taskId: @id}, (task) =>
+
+      @getCellByDate(moment( task.created_at )).html(
+        "<i class='iconfont'>&#256;</i>"
+      ).addClass 'beginning'
       DailyReviews.query {taskId: @id}, (data) =>
         @buildCalendar( data )
+
+    $scope.updateReview = () =>
+      $scope.review.$update {}, (review)=>
+        _.extend @getReviewByDate(review.date), review
+        @updateCellOfReview review
+        $('#edit-modal').modal('hide')
 
     @scope = $scope
     Review = DailyReview
@@ -45,12 +55,6 @@ class @TaskDetailController
         $('#edit-modal').modal('show')
         @scope.$apply =>
           @scope.review = new Review(review)
-
-    @scope.updateReview = () =>
-      @scope.review.$update {}, (review)=>
-        _.extend @getReviewByDate(review.date), review
-        @updateCellOfReview review
-        $('#edit-modal').modal('hide')
 
   getCellByDate: (date) ->
     target = moment(date)

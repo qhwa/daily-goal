@@ -18,5 +18,4 @@ class @TaskListController
 
     $scope.sortableOptions = {
       update: (e, ui) ->
-        console.log $scope.tasks
     }

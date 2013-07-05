@@ -1,22 +1,16 @@
 <div ng-controller="TaskListController">
     <div class="row">
-        <h3>You have {{tasks.length}} tasks</h3>
+        <h3>You have {{tasks.length}} tasks
+        <a href="#tasks/new" class="btn" ng-click="adding=true">create more</a>
+        </h3>
     </div>
 
     <div class="row">
-        <ul class="tasks nav nav-tabs nav-stacked span6" ui-sortable="sortableOptions">
+        <ul class="tasks nav nav-tabs nav-stacked span6 clearfix" ui-sortable="sortableOptions">
           <li class="task" id="task_{{task.id}}" ng-repeat="task in tasks">
               <a href="#task/{{task.id}}">{{task.name}}</a>
           </li>
         </ul>
-    </div>
-
-    <div class="row">
-        <form ng-submit="addTask()" class="form-search">
-          <input class="span6" type="text" ng-model="taskName"  size="30"
-                 placeholder="add new task here" />
-          <input class="btn btn-primary" type="submit" value="add" />
-        </form>
     </div>
 
 </div>

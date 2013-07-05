@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require jquery.ui.all
+ *= require iconfont
  */
 @import 'bootstrap';
 @import 'bootstrap-google';
@@ -36,8 +37,13 @@ table.calendar {
       background-color: #ccc;
     }
 
+    &.beginning {
+      color: #FF7300;
+    }
+
     &.done {
       background-color: #468847;
+      color: #fff;
       &:hover {
         background-color: #FF9742;
       }
