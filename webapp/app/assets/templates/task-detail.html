@@ -1,7 +1,12 @@
 <div class="page-header">
     <h1>
         {{task.name}}
-        <small>as {{task.role.name}} of {{task.role.relative_to}}</small>
+        <small ng-show="task.role">
+            as {{task.role.name}} 
+            <span ng-show="task.role.relative_to">
+                of {{task.role.relative_to}}
+            </span>
+        </small>
     </h1>
 </div>
 
