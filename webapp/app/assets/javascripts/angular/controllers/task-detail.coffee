@@ -46,12 +46,7 @@ class @TaskDetailController
         @scope.$apply =>
           @scope.review = new Review(review)
 
-    modal = $('#edit-modal')
-    modal.on 'click', '.btn-save', (evt) =>
-      modal.find('form').trigger('submit')
-
-    modal.find('form').on 'submit', (evt) =>
-      evt.preventDefault()
+    @scope.updateReview = () =>
       @scope.review.$update {}, (review)=>
         _.extend @getReviewByDate(review.date), review
         @updateCellOfReview review
