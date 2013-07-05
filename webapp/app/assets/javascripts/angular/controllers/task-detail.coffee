@@ -46,9 +46,16 @@ class @TaskDetailController
         @scope.$apply =>
           @scope.review = new Review(review)
 
-    $('#edit-modal').on 'click', '.btn-save', (evt) =>
-      @saveReview()
+    modal = $('#edit-modal')
+    modal.on 'click', '.btn-save', (evt) =>
+      modal.find('form').trigger('submit')
 
+    modal.find('form').on 'submit', (evt) =>
+      evt.preventDefault()
+      @scope.review.$update {}, (review)=>
+        _.extend @getReviewByDate(review.date), review
+        @updateCellOfReview review
+        $('#edit-modal').modal('hide')
 
   getCellByDate: (date) ->
     target = moment(date)
@@ -92,10 +99,7 @@ class @TaskDetailController
       review.date == date
 
   saveReview: ->
-    @scope.review.$update {}, (review)=>
-      _.extend @getReviewByDate(review.date), review
-      @updateCellOfReview review
-      $('#edit-modal').modal('hide')
+    $('#edit-modal form').submit()
 
   updateCellOfReview: (review) ->
     cell = @getCellByDate review.date
