@@ -36,7 +36,10 @@ class DailyReviewsController < ApplicationController
     end
 
     def find_review
-      @review = DailyReview.find_by( date: params[:id] )
+      date = Date.parse(params[:id])
+      if @task.need_done_on?(date)
+        @review = @task.daily_reviews.where( date: date ).first_or_initialize
+      end
     end
 
   private
