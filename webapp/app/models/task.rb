@@ -6,12 +6,12 @@ class Task < ActiveRecord::Base
   validates_presence_of :name
   validates_associated :role
 
-  def need_to_be_done_on?( date )
+  def need_done_on?( date )
     (date.past? || date.today?) && date >= created_at.to_date
   end
 
   def daily_review_on( date )
-    if need_to_be_done_on?( date )
+    if need_done_on?( date )
       daily_reviews.where( date: date ).first_or_create!.tap do |review|
         review.need_to_be_done = true
       end
