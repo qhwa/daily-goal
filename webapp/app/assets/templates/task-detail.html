@@ -1,43 +1,45 @@
-<div class="page-header">
-    <h1>
-        {{task.name}}
-        <small ng-show="task.role">
-            as {{task.role.name}} 
-        </small>
-    </h1>
-</div>
+<div class="task-detail-view">
+    <div class="page-header">
+        <h1>
+            {{task.name}}
+            <small ng-show="task.role">
+                as {{task.role.name}} 
+            </small>
+        </h1>
+    </div>
 
-<div class="ui-calendar" data-task-id="{{task.id}}" data-reviews-uri="{{task.reviewsUri}}">
-    <table>
-        <tr ng-repeat="i in weekDays">
-            <td id="cell_{{j}}_{{i}}" ng-repeat="j in weeks"> </td>
-        </tr>
-    </table>
-</div>
+    <div class="ui-calendar" data-task-id="{{task.id}}" data-reviews-uri="{{task.reviewsUri}}">
+        <table>
+            <tr ng-repeat="i in weekDays">
+                <td id="cell_{{j}}_{{i}}" ng-repeat="j in weeks"> </td>
+            </tr>
+        </table>
+    </div>
 
-<div class="form-actions">
-    <a href="#/" class="btn">back</a>
-</div>
+    <div class="form-actions">
+        <a href="#/" class="btn">back</a>
+    </div>
 
-<!-- Modal -->
-<div id="edit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">
-        {{task.name}} 
-        <small>on {{review.date}}</small>
-    </h3>
-  </div>
-  <div class="modal-body">
-    <form ng-submit="updateReview()">
-      <fieldset>
-          <label class="checkbox"> <input type="checkbox" ng-model="review.done"/> done </label>
-          <input type="text" ng-model="review.msg" placeholder="say something~" class="input-block-level" />
-      </fieldset>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary btn-save" ng-click="updateReview()">Save</button>
-  </div>
+    <!-- Modal -->
+    <div id="edit-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">
+            {{task.name}} 
+            <small>on {{review.date}}</small>
+        </h3>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="updateReview()">
+          <fieldset>
+              <label class="checkbox"> <input type="checkbox" ng-model="review.done"/> done </label>
+              <input type="text" ng-model="review.msg" placeholder="say something~" class="input-block-level" />
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary btn-save" ng-click="updateReview()">Save</button>
+      </div>
+    </div>
 </div>

@@ -15,6 +15,10 @@
 @import 'bootstrap';
 @import 'bootstrap-google';
 
+body {
+  background: #fff url(./wood_pattern.png);
+}
+
 table.calendar {
   td {
     font-size: 16pt;
@@ -62,6 +66,41 @@ table.calendar {
 
 }
 
-.point {
-  color: #ccc;
+ul.tasks {
+
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
+
+  li {
+    border: none;
+    > a {
+      border: none !important;
+    }
+
+    &.role {
+      margin: 0 -25px 5px -25px;
+      > a {
+        background-color: #53A93F;
+        color: #fff;
+        &:hover {
+          background-color: #53A93F;
+          color: #fff;
+        }
+
+      }
+    }
+  }
+
+  .point {
+    color: #ccc;
+  }
+}
+
+.task-detail-view {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
+
+  margin-top: 1em;
 }
