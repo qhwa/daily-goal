@@ -14,7 +14,10 @@
                     </a>
                 </li>
                 <li class="task" id="task_{{task.id}}" ng-repeat="task in tasks">
-                <a href="#task/{{task.id}}">{{task.name}}</a>
+                    <a href="#task/{{task.id}}">
+                        {{task.name}}
+                        <span class="point pull-right" ng-show="task.point>0">{{task.point}} points</span>
+                    </a>
                 </li>
             </ul>
 

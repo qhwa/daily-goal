@@ -20,6 +20,10 @@ class Task < ActiveRecord::Base
     end
   end
 
+  def point
+    daily_reviews.done.count
+  end
+
   protected
 
     def empty_review( date )

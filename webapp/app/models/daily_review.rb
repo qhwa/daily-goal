@@ -6,6 +6,9 @@ class DailyReview < ActiveRecord::Base
   validates_uniqueness_of :date, :scope => :task_id
   validate :check_date_after_task_created
 
+  scope :done,    -> { where(done: true) }
+  scope :undone,  -> { where(done: false) }
+
   attr_accessor :need_to_be_done
 
   def need_to_be_done?
