@@ -2,7 +2,9 @@ class @TaskListController
 
   constructor: ($scope, $routeParams, Task, Tasks) ->
 
-    $scope.tasks = Tasks.query()
+    $scope.tasks = Tasks.query (tasks) ->
+      $scope.groupedTasks = _.groupBy tasks, (task) ->
+        task.role && task.role.name
    
     $scope.addTask = () ->
 
