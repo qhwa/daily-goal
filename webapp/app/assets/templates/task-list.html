@@ -1,7 +1,7 @@
 <div ng-controller="TaskListController">
     <div class="row">
         <h3>You have {{tasks.length}} tasks
-            <a href="#tasks/new" class="btn" ng-click="adding=true">create more</a>
+            <a href="#tasks/new" class="btn btn-primary" ng-click="adding=true">create more</a>
         </h3>
     </div>
 
@@ -9,7 +9,7 @@
         <div class="row">
             <ul class="tasks nav nav-tabs nav-stacked span6 clearfix">
                 <li class="role active">
-                    <a href="#" ng-click="return(false)">
+                    <a href="#" class="info" ng-click="return(false)">
                         {{ tasks.length }} as {{role}}
                     </a>
                 </li>

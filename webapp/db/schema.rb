@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130702212859) do
+ActiveRecord::Schema.define(version: 20130708125434) do
 
   create_table "daily_reviews", force: true do |t|
     t.integer  "task_id",                    null: false
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20130702212859) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
-    t.string   "relative_to"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
