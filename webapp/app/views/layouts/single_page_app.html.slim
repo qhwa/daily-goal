@@ -13,5 +13,9 @@ html
     = csrf_meta_tags 
 
   body
+    .navbar.navbar-static-top
+      .navbar-inner
+        a.brand( href="#" ) daily goal
+
     .container
       = yield 

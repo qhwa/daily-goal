@@ -68,7 +68,7 @@ table.calendar {
 
 ul.tasks {
 
-  padding: 20px;
+  padding: 10px;
   background-color: #fff;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
 
@@ -79,7 +79,6 @@ ul.tasks {
     }
 
     &.role {
-      margin: 0 -25px 5px -25px;
       > a {
         background-color: #53A93F;
         color: #fff;
@@ -103,4 +102,15 @@ ul.tasks {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
 
   margin-top: 1em;
+}
+
+.navbar {
+
+  .navbar-inner {
+    border: none;
+    border-bottom: none;
+    background: #fff;
+    min-height: 50px;
+    line-height: 50px;
+  }
 }
