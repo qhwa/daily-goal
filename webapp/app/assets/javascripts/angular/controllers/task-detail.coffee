@@ -29,11 +29,6 @@ class @TaskDetailController
     @scope = $scope
     Review = DailyReview
 
-
-
-  scope: ->
-
-
   buildCalendar: (reviews) ->
     self = @
 
@@ -86,13 +81,18 @@ class @TaskDetailController
     start.startOf('week')
 
   getCellTip: (cell) ->
-    date = @getDateStrFromCell(cell)
-    if cell.hasClass('done')
-      "<p>#{date}</p>DONE!"
-    else if cell.hasClass('undone')
-      "<p>#{date}</p>undone"
+    date = @getDateFromCell(cell)
+    dateStr = date.format('YYYY-MM-DD')
+
+    str = if cell.hasClass('done')
+      "<p>#{dateStr}</p>DONE!"
+    else if cell.hasClass('undone') or !date.isAfter(moment()) and !date.isBefore(@startDate)
+      "<p>#{dateStr}</p>undone"
     else
-      "<p>#{date}</p>not needed"
+      "<p>#{dateStr}</p>not needed"
+
+    str += "<p>Task began</p>" if date.isSame(@startDate)
+    str
 
   getDateStrFromCell: (cell) ->
     @getDateFromCell(cell).format('YYYY-MM-DD')
