@@ -110,7 +110,13 @@ ul.tasks {
     border: none;
     border-bottom: none;
     background: #fff;
-    min-height: 50px;
-    line-height: 50px;
+    min-height: 40px;
+    line-height: 40px;
+
+    .nav {
+      li {
+        line-height: 40px;
+      }
+    }
   }
 }

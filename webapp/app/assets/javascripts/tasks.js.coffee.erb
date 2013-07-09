@@ -7,7 +7,7 @@ angular.module( 'task', [
   ])
   .config ($routeProvider) ->
     $routeProvider
-      .when( '/', {
+      .when( '/tasks', {
         controller: TaskListController,
         templateUrl: '<%= asset_path "task-list.html" %>'
       })
