@@ -66,11 +66,15 @@ table.calendar {
 
 }
 
-ul.tasks {
-
+.panel {
   padding: 10px;
   background-color: #fff;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
+}
+
+ul.tasks {
+
+  @extend .panel;
 
   li {
     border: none;
@@ -119,4 +123,13 @@ ul.tasks {
       }
     }
   }
+}
+
+.roles-view {
+  @extend .panel;
+  margin-top: 1em;
+}
+
+table.roles {
+  background: #fff;
 }

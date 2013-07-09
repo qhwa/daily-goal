@@ -3,10 +3,18 @@ angular.module( 'task', [
   'tasksServices',
   'dailyReviewsServices',
   'rolesServices',
-  'ui'
+  'ui',
+  'prevent-default'
   ])
   .config ($routeProvider) ->
     $routeProvider
+      .when( '/', {
+        redirectTo: '/tasks'
+      })
+      .when( '/roles', {
+        controller: RolesController,
+        templateUrl: '<%= asset_path "roles.html" %>'
+      })
       .when( '/tasks', {
         controller: TaskListController,
         templateUrl: '<%= asset_path "task-list.html" %>'

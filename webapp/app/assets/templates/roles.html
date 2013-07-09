@@ -1,0 +1,25 @@
+<div class="roles-view">
+  <h1>roles</h1>
+  <table class="table roles">
+    <thead>
+      <th>name</th>
+      <th>tasks count</th>
+      <th>action</th>
+    </thead>
+    <tr ng-repeat="role in roles" data-role-id="{{role.id}}" class="role">
+      <td>{{role.name}}</td>
+      <td>{{role.tasks_count}}</td>
+      <td>
+        <a href="#" class="btn btn-danger" ng-click="destroyRole($event)">
+          <i class="icon-trash icon-white" />
+          destroy
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <form class="form-inline" ng-submit="createRole()">
+    <input type="text" ng-model="newRoleName" />
+    <input type="submit" class="btn btn-primary" value="create role" />
+  </form>
+</div>

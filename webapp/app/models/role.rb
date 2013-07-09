@@ -4,4 +4,9 @@ class Role < ActiveRecord::Base
 
   has_many :tasks
 
+  # TODO: use cache
+  def tasks_count
+    tasks.count
+  end
+
 end
