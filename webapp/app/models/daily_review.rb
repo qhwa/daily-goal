@@ -8,6 +8,7 @@ class DailyReview < ActiveRecord::Base
 
   scope :done,    -> { where(done: true) }
   scope :undone,  -> { where(done: false) }
+  scope :on_date, -> date { where(date: date) }
 
   attr_accessor :need_to_be_done
 

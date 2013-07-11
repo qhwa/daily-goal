@@ -6,6 +6,9 @@ class Task < ActiveRecord::Base
   validates_presence_of :name
   validates_associated :role
 
+  #TODO: check using need_done_on?
+  scope :on_date, -> date { where('created_at < ?', date.since(1.day)) }
+
   def need_done_on?( date )
     (date.past? || date.today?) && date >= created_at.to_date
   end
