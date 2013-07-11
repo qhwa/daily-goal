@@ -11,6 +11,7 @@ class @RolesController
 
     $scope.destroyRole = (evt) ->
       evt.preventDefault()
+      return if !confirm("Are you sure to destroy this role?")
       context = $(evt.target).closest('.role')
       id = context.data('role-id')
 
