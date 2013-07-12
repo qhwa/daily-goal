@@ -1,0 +1,9 @@
+<h1>check yesterday's task</h1>
+<ul class="tasks">
+    <li ng-repeat="task in tasks" class="task">
+        <input type="checkbox" ng-model="task.review.done" />
+        <a href="/#/task/{{task.id}}">
+            {{task.name}}
+        </a>
+    </li>
+</ul>

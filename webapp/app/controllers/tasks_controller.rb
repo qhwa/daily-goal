@@ -8,6 +8,10 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    if params[:date]
+      @date = Date.parse params[:date]
+      @tasks = @tasks.on_date @date
+    end
   end
 
   # GET /tasks/1

@@ -9,7 +9,8 @@ angular.module( 'task', [
   .config ($routeProvider) ->
     $routeProvider
       .when( '/', {
-        redirectTo: '/tasks'
+        controller: CheckController,
+        templateUrl: '<%= asset_path "check.html" %>'
       })
       .when( '/roles', {
         controller: RolesController,
