@@ -1,9 +1,21 @@
-<h1>check yesterday's task</h1>
-<ul class="tasks">
-    <li ng-repeat="task in tasks" class="task">
-        <input type="checkbox" ng-model="task.review.done" />
-        <a href="/#/task/{{task.id}}">
-            {{task.name}}
-        </a>
-    </li>
-</ul>
+<div class="panel">
+    <h1>check yesterday's work</h1>
+    <table class="tasks table">
+        <tbody>
+            <tr ng-repeat="task in tasks" class="task" data-task-id="{{task.id}}" data-review-id="{{task.review.id}}">
+                <td>
+                    <label>
+                        <input type="checkbox" ng-model="task.review.done" ng-click="reviewStateChange($event)" />
+                        <span class="task-checked-{{task.review.done}}">{{task.name}}</span>
+                    </label>
+                </td>
+                <td>
+                    <a href="/#/task/{{task.id}}">
+                        <i class="icon-calendar"></i>
+                        calendar view
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

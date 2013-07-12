@@ -104,7 +104,10 @@ ul.tasks {
   padding: 20px;
   background-color: #fff;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, .2);
+}
 
+
+[ng-view] {
   margin-top: 1em;
 }
 
@@ -132,4 +135,8 @@ ul.tasks {
 
 table.roles {
   background: #fff;
+}
+
+.task-checked-true {
+  text-decoration: line-through;
 }
