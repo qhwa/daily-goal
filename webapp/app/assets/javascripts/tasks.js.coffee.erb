@@ -20,6 +20,10 @@ angular.module( 'task', [
         controller: RolesController,
         templateUrl: '<%= asset_path "roles.html" %>'
       })
+      .when( '/roles/new', {
+        controller: NewRoleController,
+        templateUrl: '<%= asset_path "new-role.html" %>'
+      })
       .when( '/tasks', {
         controller: TaskListController,
         templateUrl: '<%= asset_path "task-list.html" %>'
