@@ -1,3 +1,7 @@
+#= require angular
+#= require angular-ui
+#= require_tree ./angular
+
 angular.module( 'task', [
   'ngResource',
   'tasksServices',
@@ -9,8 +13,8 @@ angular.module( 'task', [
   .config ($routeProvider) ->
     $routeProvider
       .when( '/', {
-        controller: CheckController,
-        templateUrl: '<%= asset_path "check.html" %>'
+        controller: HomeController,
+        templateUrl: '<%= asset_path "home.html" %>'
       })
       .when( '/roles', {
         controller: RolesController,

@@ -1,1 +1,8 @@
-<h1>home</h1>
+<div ng-switch="mode">
+    <div ng-switch-when="wizzard" ng-controller="WizzardController">
+        <div ng-include="'/assets/wizzard.html'"></div>
+    </div>
+    <div ng-switch-when="check" ng-controller="CheckController">
+        <div ng-include="'/assets/check.html'"></div>
+    </div>
+</div>
